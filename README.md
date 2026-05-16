@@ -1,0 +1,1 @@
+Note: Playwright is a library for browser automation and scripting, it doesn't have test runner, can't use expect assertions. @playwright/test package is testing framework built on top of playwright library.It helps you do end to end testing , inbuild test runner,you can use expect asertions, tools like trace viewer, html reports, UI mode.
