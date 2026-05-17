@@ -6,6 +6,13 @@ async function openLoginPage(page) {
    await expect(page.locator('h1:has-text("Sign in to EventHub")')).toBeVisible()
 }
 
+test.afterEach(async ({},result) =>{
+if(result.status !== result.expectedStatus){
+    console.log("Test failed: "+ result.title)
+}else {
+    console.log("Test passed: "+ result.title)}
+})
+
 //Playwright actions return promises and await prevents timing issues and flaky behavior. Await will wait or freeze the async function till the promise is fulfilled or rejected. The function that uses await must be async function so the modified async should be specified before the function name. Using await and async make asynchronous code excute in synchronous way. As the browser automation involves sequential operations. 
 test("EventHub login page loads", async ({ page }) => {
     await openLoginPage(page)
